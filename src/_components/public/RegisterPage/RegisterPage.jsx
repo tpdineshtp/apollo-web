@@ -10,12 +10,15 @@ class RegisterPage extends React.Component {
 
         this.state = {
             user: {
-                firstName: '',
-                lastName: '',
                 username: '',
-                password: ''
-            },
-            submitted: false
+                password: '',
+                confirm_password: '',
+                email: '',
+                full_name: '',
+                male: '',
+                female: '',
+                agree_terms: ''
+            }
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,11 +38,9 @@ class RegisterPage extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
-        this.setState({ submitted: true });
         const { user } = this.state;
         const { dispatch } = this.props;
-        if (user.firstName && user.lastName && user.username && user.password) {
+        if (user.username && user.password && user.confirm_password && user.email) {
             dispatch(userActions.register(user));
         }
     }
@@ -51,42 +52,42 @@ class RegisterPage extends React.Component {
           <div className="text-center">
             <div className="logo">register</div>
             <div className="login-form-1">
-              <form id="register-form" className="text-left">
+              <form id="register-form" className="text-left" onSubmit={this.handleSubmit} method="POST">
                 <div className="login-form-main-message"></div>
                 <div className="main-login-form">
                   <div className="login-group">
                     <div className="form-group">
-                      <label htmlFor="reg_username" className="sr-only">Email address</label>
-                      <input type="text" className="form-control" id="reg_username" name="reg_username" placeholder="username"/>
+                      <label htmlFor="reg_username" className="sr-only">Username</label>
+                      <input type="text" className="form-control" id="reg_username" name="username" placeholder="username" value={user.username} onChange={this.handleChange}/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="reg_password" className="sr-only">Password</label>
-                      <input type="password" className="form-control" id="reg_password" name="reg_password" placeholder="password"/>
+                      <input type="password" className="form-control" id="reg_password" name="password" placeholder="password" value={user.password} onChange={this.handleChange}/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="reg_password_confirm" className="sr-only">Password Confirm</label>
-                      <input type="password" className="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password"/>
+                      <input type="password" className="form-control" id="reg_password_confirm" name="confirm_password" placeholder="confirm password" value={user.confirm_password} onChange={this.handleChange}/>
                     </div>
 
                     <div className="form-group">
                       <label htmlFor="reg_email" className="sr-only">Email</label>
-                      <input type="text" className="form-control" id="reg_email" name="reg_email" placeholder="email"/>
+                      <input type="text" className="form-control" id="reg_email" name="email" placeholder="email" value={user.email} onChange={this.handleChange}/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="reg_fullname" className="sr-only">Full Name</label>
-                      <input type="text" className="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name"/>
+                      <input type="text" className="form-control" id="reg_fullname" name="full_name" placeholder="full name" value={user.full_name} onChange={this.handleChange}/>
                     </div>
 
                     <div className="form-group login-group-checkbox">
-                      <input type="radio" className="" name="reg_gender" id="male" placeholder="username"/>
+                      <input type="radio" className="" name="male" id="male" placeholder="username" value={user.male} onChange={this.handleChange}/>
                       <label htmlFor="male">male</label>
 
-                      <input type="radio" className="" name="reg_gender" id="female" placeholder="username"/>
+                      <input type="radio" className="" name="female" id="female" placeholder="username" value={user.female} onChange={this.handleChange}/>
                       <label htmlFor="female">female</label>
                     </div>
 
                     <div className="form-group login-group-checkbox">
-                      <input type="checkbox" className="" id="reg_agree" name="reg_agree"/>
+                      <input type="checkbox" className="" id="reg_agree" name="agree_terms" value={user.agree_terms} onChange={this.handleChange}/>
                       <label htmlFor="reg_agree">i agree with <a href="#">terms</a></label>
                     </div>
                   </div>

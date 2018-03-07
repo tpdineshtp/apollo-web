@@ -10,7 +10,6 @@ class LoginPage extends React.Component {
         super(props);
 
         // reset login status
-        this.props.dispatch(userActions.logout());
 
         this.state = {
             username: '',
@@ -34,7 +33,7 @@ class LoginPage extends React.Component {
         const { username, password } = this.state;
         const { dispatch } = this.props;
         if (username && password) {
-            dispatch(userActions.login(username, password));
+            
         }
     }
 
