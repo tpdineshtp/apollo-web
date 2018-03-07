@@ -36,6 +36,36 @@ class RegisterPage extends React.Component {
         });
     }
 
+    componentDidMount() {
+      $("#register-form").validate({
+        rules: {
+          username: "required",
+          password: {
+            required: true,
+            minlength: 5
+          },
+          confirm_password: {
+            required: true,
+            minlength: 5,
+            equalTo: "#register-form [name=password]"
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          agree_terms: "required",
+        },
+        errorClass: "form-invalid",
+        errorPlacement: function( label, element ) {
+          if( element.attr( "type" ) === "checkbox" || element.attr( "type" ) === "radio" ) {
+            element.parent().append( label ); // this would append the label after all your checkboxes/labels (so the error-label will be the last element in <div class="controls"> )
+          }
+          else {
+            label.insertAfter( element ); // standard behaviour
+          }
+        }
+      });
+    }
     handleSubmit(event) {
         event.preventDefault();
         const { user } = this.state;
@@ -76,14 +106,6 @@ class RegisterPage extends React.Component {
                     <div className="form-group">
                       <label htmlFor="reg_fullname" className="sr-only">Full Name</label>
                       <input type="text" className="form-control" id="reg_fullname" name="full_name" placeholder="full name" value={user.full_name} onChange={this.handleChange}/>
-                    </div>
-
-                    <div className="form-group login-group-checkbox">
-                      <input type="radio" className="" name="male" id="male" placeholder="username" value={user.male} onChange={this.handleChange}/>
-                      <label htmlFor="male">male</label>
-
-                      <input type="radio" className="" name="female" id="female" placeholder="username" value={user.female} onChange={this.handleChange}/>
-                      <label htmlFor="female">female</label>
                     </div>
 
                     <div className="form-group login-group-checkbox">
