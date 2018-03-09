@@ -9,8 +9,6 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // reset login status
-
         this.state = {
             username: '',
             password: '',
@@ -21,6 +19,16 @@ class LoginPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+      $("#login-form").validate({
+        rules: {
+          username: "required",
+          password: "required",
+        },
+        errorClass: "form-invalid"
+      });
+    }
+
     handleChange(e) {
         const { name, value } = e.target;
         this.setState({ [name]: value });
@@ -29,32 +37,35 @@ class LoginPage extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.setState({ submitted: true });
         const { username, password } = this.state;
         const { dispatch } = this.props;
         if (username && password) {
-            
+            dispatch(userActions.login(username, password));
         }
     }
 
     render() {
-        const { loggingIn } = this.props;
-        const { username, password, submitted } = this.state;
+        const { loggedIn, user, loginFailure } = this.props;
+        console.log(loginFailure);
+        if(loginFailure) {
+          $('#login-form').find('.login-form-main-message').addClass('show error').html('Wrong Psername or Password!');
+        }
+        const { username, password } = this.state;
         return (
             <div className="text-center">
             	<div className="logo">login</div>
             	<div className="login-form-1">
-            		<form id="login-form" className="text-left">
+            		<form id="login-form" className="text-left" onSubmit={this.handleSubmit} method="POST">
             			<div className="login-form-main-message"></div>
             			<div className="main-login-form">
             				<div className="login-group">
             					<div className="form-group">
             						<label htmlFor="lg_username" className="sr-only">Username</label>
-            						<input type="text" className="form-control" id="lg_username" name="lg_username" placeholder="username"/>
+            						<input type="text" className="form-control" id="lg_username" name="username" placeholder="username" value={username} onChange={this.handleChange}/>
             					</div>
             					<div className="form-group">
             						<label htmlFor="lg_password" className="sr-only">Password</label>
-            						<input type="password" className="form-control" id="lg_password" name="lg_password" placeholder="password"/>
+            						<input type="password" className="form-control" id="lg_password" name="password" placeholder="password" value={password} onChange={this.handleChange}/>
             					</div>
             					<div className="form-group login-group-checkbox">
             						<input type="checkbox" id="lg_remember" name="lg_remember"/>
@@ -75,10 +86,12 @@ class LoginPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
-    return {
-        loggingIn
-    };
+  const { loggedIn, user, loginFailure } = state.authentication;
+  return {
+      loggedIn,
+      user,
+      loginFailure
+  };
 }
 
 const connectedLoginPage = connect(mapStateToProps)(LoginPage);

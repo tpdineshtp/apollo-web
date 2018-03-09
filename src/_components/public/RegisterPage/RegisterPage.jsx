@@ -70,14 +70,19 @@ class RegisterPage extends React.Component {
         event.preventDefault();
         const { user } = this.state;
         const { dispatch } = this.props;
-        if (user.username && user.password && user.confirm_password && user.email) {
+        if (user.username && user.password === user.confirm_password && user.email) {
             dispatch(userActions.register(user));
         }
     }
 
     render() {
-        const { registering  } = this.props;
-        const { user, submitted } = this.state;
+        const { register_status  } = this.props;
+        const { user } = this.state;
+        if(register_status == 409) {
+          $('#register-form').find('.login-form-main-message').addClass('show error').html('Username already taken!');
+        } else if(register_status == 500) {
+          $('#register-form').find('.login-form-main-message').addClass('show error').html('Something went wrong!!');
+        }
         return (
           <div className="text-center">
             <div className="logo">register</div>
@@ -126,9 +131,9 @@ class RegisterPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { registering } = state.registration;
+    const { register_status } = state.registration;
     return {
-        registering
+        register_status
     };
 }
 

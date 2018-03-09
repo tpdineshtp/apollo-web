@@ -13,29 +13,20 @@ import { ForgotPage } from '../_components/public/ForgotPasswordPage'
 class App extends React.Component {
     constructor(props) {
         super(props);
-
-        const { dispatch } = this.props;
-        history.listen((location, action) => {
-            // clear alert on location change
-            dispatch(alertActions.clear());
-        });
     }
 
     render() {
         const { alert } = this.props;
         return (
             <div>
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
-                        <Router history={history}>
-                            <div>
-                                <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
-                                <Route path="/forgot" component={ForgotPage} />
-                            </div>
-                        </Router>
+                <Router history={history}>
+                    <div>
+                        <PrivateRoute exact path="/" component={HomePage} />
+                        <Route path="/login" component={LoginPage} />
+                        <Route path="/register" component={RegisterPage} />
+                        <Route path="/forgot" component={ForgotPage} />
+                    </div>
+                </Router>
             </div>
         );
     }
