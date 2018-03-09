@@ -5,7 +5,8 @@ import { history } from '../_helpers';
 
 export const userActions = {
     register,
-    login
+    login,
+    logout
 };
 
 function register(user) {
@@ -27,7 +28,6 @@ function register(user) {
             );
     };
 
-    function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
     function already_exists(error) {return { type: userConstants.REGISTER_CONFLICT, error } }
@@ -47,7 +47,11 @@ function login(username, password) {
             );
     };
 
-    function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
     function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
+}
+
+function logout() {
+    userService.logout();
+    return { type: userConstants.LOGOUT };
 }

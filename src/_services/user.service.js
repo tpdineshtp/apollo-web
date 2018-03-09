@@ -2,9 +2,9 @@ import { authHeader } from '../_helpers';
 
 export const userService = {
     register,
-    login
+    login,
+    logout
 };
-
 
 function register(user) {
     const requestOptions = {
@@ -41,7 +41,10 @@ function login(username, password) {
         });
 }
 
-
+function logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+}
 
 function handleResponse(response) {
     if (!response.ok) {
