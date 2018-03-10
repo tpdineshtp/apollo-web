@@ -23,8 +23,20 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: 'style-loader!css-loader!sass-loader'
-            }
-        ]
+            },
+            {
+              test: /\.(png|jpg|gif)$/,
+              use: [
+                {
+                  loader: require.resolve("url-loader") + "?name=../[path][name].[ext]",
+                  options: {
+                    limit: 8192
+                  }
+                }
+              ]
+            },
+            { test: /(\.css$)/, loaders: ['style-loader', 'css-loader'] }, { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+        ],
     },
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.html',

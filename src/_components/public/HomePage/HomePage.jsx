@@ -3,10 +3,23 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../../../_actions';
+import { Banner } from './_sub-components/banner';
+import { About } from './_sub-components/about';
+import { Skills } from './_sub-components/skills';
+import { Experience } from './_sub-components/experience';
+import { Services } from './_sub-components/services';
+import { Projects } from './_sub-components/projects';
+
+import  '../../../_assets/styles/lightbox.css';
+import  '../../../_assets/styles/popuo-box.css';
+import  '../../../_assets/styles/style.css';
+import  { external_typed } from'../../../_assets/js/typed.js';
+import  { external_smooth_scroll } from'../../../_assets/js/SmoothScroll.min.js';
 
 class HomePage extends React.Component {
     componentDidMount() {
-
+      external_typed();
+      external_smooth_scroll();
     }
 
     handleDeleteUser(id) {
@@ -16,13 +29,13 @@ class HomePage extends React.Component {
     render() {
         const { user } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
-                <h1>Hi!</h1>
-                <p>You're logged in with React!!</p>
-                <h3>All registered users:</h3>
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
+            <div>
+              <Banner/>
+              <About/>
+              <Skills/>
+              <Experience/>
+              <Services/>
+              <Projects/>
             </div>
         );
     }
