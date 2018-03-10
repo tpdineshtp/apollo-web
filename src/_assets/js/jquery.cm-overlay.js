@@ -1,5 +1,5 @@
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
 // 'jquery centered modal overlay' by Campbell McGuiness (c) 2014
 //
 // uses Stacklayout based CSS to vertically and horizontally centre a modal overlay
@@ -12,7 +12,7 @@
 // - animate the overlay display and hide
 // - keyboard ESC triggers close
 //
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //
 // markup triggers are always anchor
 // target elements can be either an iframe or an img tag
@@ -23,15 +23,15 @@
 // - maximum width = 1204px
 // - iframe aspect ratio = 16:9
 // (next version will automatically calulate aspect ratio, and provide a variable for the maximum width)
-// 
+//
 // img
 // - indicated by the lack of a 'rel' attribute
 // - maximum height = 90%
 // (next version will provide a variable for the maximum height)
 //
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-(function ( $ ) {
+export function external_cm_overlay() {
 
     var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
 
@@ -118,7 +118,7 @@
         }
         maxHeight = Math.round((winHeight * 0.90) / 10) * 10;
     }
-    
+
     // show previous and next arrows
     var showArrows = function(i) {
         objLength = $obj.length - 1;
@@ -340,4 +340,4 @@
         });
     }
 
-}( jQuery ));
+}

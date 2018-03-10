@@ -42,7 +42,7 @@ class Banner extends React.Component {
       						<p>LEAD <i>UI/UX DESIGNER.</i></p>
       						<p>LEAD <i>WEB DEVELOPER</i></p>
       					</div>
-      				<span id="typed"></span>
+      				<span id="typed" style={{whiteSpace : 'pre'}}></span>
       				<p className="banner-p-w3ls">Nam arcu mauris, tincidunt Cras sapien urna, malesuada ut varius consequat.</p>
       			</div>
       			<div className="w3_agileits_social_media">
