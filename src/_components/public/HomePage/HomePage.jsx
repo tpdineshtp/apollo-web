@@ -16,7 +16,6 @@ import  '../../../_assets/styles/popuo-box.css';
 import  '../../../_assets/styles/style.css';
 import  { external_typed } from'../../../_assets/js/typed.js';
 import  { external_smooth_scroll } from'../../../_assets/js/SmoothScroll.min.js';
-import { external_cm_overlay } from '../../../_assets/js/jquery.cm-overlay.js';
 import { external_move_to_top } from '../../../_assets/js/move-top.js';
 import { external_magnific_popup } from '../../../_assets/js/jquery.magnific-popup.js';
 import { external_responsive_slides } from '../../../_assets/js/responsiveslides.min.js';
@@ -25,11 +24,9 @@ class HomePage extends React.Component {
     componentDidMount() {
       external_typed();
       external_smooth_scroll();
-      external_cm_overlay();
       external_move_to_top();
       external_magnific_popup();
       external_responsive_slides();
-      $('.cm-overlay').cmOverlay();
       $('.mobile-nav-button').on('click', function() {
         $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(1)" ).toggleClass( "mobile-nav-button__line--1");
         $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(2)" ).toggleClass( "mobile-nav-button__line--2");

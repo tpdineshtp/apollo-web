@@ -10,16 +10,16 @@ class About extends React.Component {
           		<h5>Follow <br/>me on <br/><span>twitter</span><i className="fa fa-twitter" aria-hidden="true"></i></h5>
           	</div>
           		<div className="col-md-6 person-info-agileits-w3layouts">
-          		<h3 className="w3_head w3_head1">About Me <span>I am Andrew Smith</span></h3>
-          		<p><span>Hi!, Iam Andrew Smith </span>Nam arcu mauris, tincidunt sed convallis non, egestas ut lacus. Cras sapien urna, malesuada ut varius consequat, hendrerit nisl. Aliquam vestibulum, odio non ullamcorper malesuada.Nam arcu mauris, tincidunt sed convallis non, egestas ut lacus.</p>
+          		<h3 className="w3_head w3_head1">About Me <span>I am Dinesh Palanisamy</span></h3>
+          		<p><span>Hi!, Iam Dinesh Palanisamy </span> Working in Xome India as a Software Engineer. Skilled in Web development, React js, ruby on rails and Node.js. Strong engineering professional with a B.E focused in CSE from College of Engineering, Guindy, Anna University.</p>
           			<ul>
-          				<li><span>Name</span>: Andrew Smith</li>
-          				<li><span>Age</span>: 28 Years</li>
-          				<li><span>Experience</span>: +5 Years</li>
-          				<li><span>Email</span>: <a href="mailto:info@example.com">info@example.com</a></li>
-          				<li><span>Phone</span>: (012) 345 6789</li>
+          				<li><span>Name</span>: Dinesh Palanisamy</li>
+          				<li><span>Age</span>: 23 Years</li>
+          				<li><span>Experience</span>: 2 Years</li>
+          				<li><span>Email</span>: <a href="mailto:tpdineshtp@gmail.com">tpdineshtp@gmail.com</a></li>
+          				<li><span>Phone</span>: 73736 13673</li>
           				<li><span>Website</span>: <a href="#">www.mywebsite.com</a></li>
-          				<li><span>Address</span>: Jackson, 538, USA</li>
+          				<li><span>Address</span>: Chennai, Tamil Nadu, India</li>
           				<li><a href="#" className="botton-w3ls">Download CV</a>
           					<a href="#small-dialog" className="play-icon popup-with-zoom-anim botton-w3ls">Watch my video</a>
           				</li>

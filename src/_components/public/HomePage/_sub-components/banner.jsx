@@ -36,21 +36,21 @@ class Banner extends React.Component {
       				<div className="clearfix"> </div>
       			</div>
       			<div className="agile_banner_info">
-      			<h2><span>HI! I'm</span> Andrew Smith</h2>
+      			<h2><span>HI! I'm</span> Dinesh Palanisamy</h2>
       				<div id="typed-strings" className="agileits_w3layouts_strings">
-      						<p>LEAD <i>DEVELOPER.</i></p>
-      						<p>LEAD <i>UI/UX DESIGNER.</i></p>
-      						<p>LEAD <i>WEB DEVELOPER</i></p>
+      						<p>WEB APPLICATION <i>DEVELOPER.</i></p>
+      						<p>GRAPHICAL <i>DESIGNER.</i></p>
+                  <p>FULL STACK <i>DEVELOPER.</i></p>
       					</div>
       				<span id="typed" style={{whiteSpace : 'pre'}}></span>
-      				<p className="banner-p-w3ls">Nam arcu mauris, tincidunt Cras sapien urna, malesuada ut varius consequat.</p>
+      				<p className="banner-p-w3ls">Experienced Software Engineer with a demonstrated history of working in the real estate industry</p>
       			</div>
       			<div className="w3_agileits_social_media">
       				<ul>
-      					<li><a href="#" className="wthree_facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-      					<li><a href="#" className="wthree_twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-      					<li><a href="#" className="wthree_dribbble"><i className="fa fa-dribbble" aria-hidden="true"></i></a></li>
-      					<li><a href="#" className="wthree_behance"><i className="fa fa-behance" aria-hidden="true"></i></a></li>
+      					<li><a href="https://www.facebook.com/Dinesh.TP" target='_blank' className="wthree_facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+      					<li><a href="https://twitter.com/dineshtp94" target='_blank' className="wthree_twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
+      					<li><a href="#" className="wthree_dribbble"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      					<li><a href="https://www.instagram.com/dinesh_tp" target='_blank' className="wthree_behance"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
       				</ul>
       			</div>
       			<div className="banner-image-w3layouts">
