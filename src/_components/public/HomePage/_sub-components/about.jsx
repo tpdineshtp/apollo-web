@@ -20,7 +20,7 @@ class About extends React.Component {
           				<li><span>Phone</span>: 73736 13673</li>
           				<li><span>Website</span>: <a href="#">www.mywebsite.com</a></li>
           				<li><span>Address</span>: Chennai, Tamil Nadu, India</li>
-          				<li><a href="#" className="botton-w3ls">Download CV</a>
+          				<li><a href="http://localhost:3000/download/resume" className="botton-w3ls">Download CV</a>
           					<a href="#small-dialog" className="play-icon popup-with-zoom-anim botton-w3ls">Watch my video</a>
           				</li>
           			</ul>
@@ -36,7 +36,7 @@ class About extends React.Component {
           	<div className="container">
           		<h6>Iam available for freelance projects.</h6>
           		<h3>Let's <span>work</span> together indeed!</h3>
-          		<a href="#contact" className="scroll">Get quotes</a>
+          		<a href="#contact" className="scroll">Get quote</a>
           	</div>
           </section>
         </div>

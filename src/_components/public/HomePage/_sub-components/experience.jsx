@@ -9,30 +9,20 @@ class Experience extends React.Component {
       		<h5>Work experience</h5>
       		<div className="work-info-agileits">
       			<div className="col-md-4 work-left-agileits-w3layouts">
-      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2016-Present</h6>
+      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> Jul’16 - Present</h6>
       			</div>
       			<div className="col-md-8 work-right-w3-agileits">
-      				<h3>loremipsum/<span>Social Media Marketing</span></h3>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec congue risus. In non nulla lacus. Maecenas eros sapien, eleifend quis augue eu, pellentesque tincidunt tellus</p>
+      				<h3>Xome India, Chennai/<span>Full time</span></h3>
+      				<p>Project Name : Apollo Web - White labeled Customer facing web application of a mortgage company that handles various type of operations related to mortgage, built using React js, Redux, Ruby on rails and Spring microservices.</p>
       			</div>
       			<div className="clearfix"> </div>
       		</div>
       		<div className="work-info-agileits">
       			<div className="col-md-4 work-left-agileits-w3layouts">
-      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2014-2016</h6>
+      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> May’16 - Jul’16</h6>
       			</div>
       			<div className="col-md-8 work-right-w3-agileits">
-      				<h3>loremipsum/<span>web developer</span></h3>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec congue risus. In non nulla lacus. Maecenas eros sapien, eleifend quis augue eu, pellentesque tincidunt tellus</p>
-      			</div>
-      			<div className="clearfix"> </div>
-      		</div>
-      		<div className="work-info-agileits">
-      			<div className="col-md-4 work-left-agileits-w3layouts">
-      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2013-2014</h6>
-      			</div>
-      			<div className="col-md-8 work-right-w3-agileits">
-      				<h3>loremipsum/<span>Designing</span></h3>
+      				<h3>Xome India, Chennai/<span>Internship</span></h3>
       				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec congue risus. In non nulla lacus. Maecenas eros sapien, eleifend quis augue eu, pellentesque tincidunt tellus</p>
       			</div>
       			<div className="clearfix"> </div>
@@ -40,21 +30,21 @@ class Experience extends React.Component {
       		<h5 className="work2">Education</h5>
       		<div className="work-info-agileits">
       			<div className="col-md-4 work-left-agileits-w3layouts">
-      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2011-2013</h6>
+      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2012-2016</h6>
       			</div>
       			<div className="col-md-8 work-right-w3-agileits">
-      				<h3>Maecenas University</h3>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec congue risus. In non nulla lacus. Maecenas eros sapien, eleifend quis augue eu, pellentesque tincidunt tellus</p>
+      				<h3>College of Engineering, Guindy, Anna University</h3>
+      				<p>Studied BE,CSE with 65.3 %</p>
       			</div>
       			<div className="clearfix"> </div>
       		</div>
       		<div className="work-info-agileits">
       			<div className="col-md-4 work-left-agileits-w3layouts">
-      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2008-2011</h6>
+      				<h6><i className="fa fa-calendar-check-o" aria-hidden="true"></i> 2010-2012</h6>
       			</div>
       			<div className="col-md-8 work-right-w3-agileits">
-      				<h3>Consectetur College</h3>
-      				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec congue risus. In non nulla lacus. Maecenas eros sapien, eleifend quis augue eu, pellentesque tincidunt tellus</p>
+      				<h3>Veveaham Higher Secondary School</h3>
+      				<p>Studied HSC[state board] with 96%</p>
       			</div>
       			<div className="clearfix"> </div>
       		</div>
