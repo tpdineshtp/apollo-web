@@ -18,5 +18,5 @@ function handleResponse(response) {
         return Promise.reject(response.status);
     }
 
-    return response.json();
+    return;
 }

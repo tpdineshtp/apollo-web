@@ -1,22 +1,61 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import GoogleMapReact from 'google-map-react'
+import { sendRequestActions } from '../../../../_actions';
 
 const AnyReactComponent = ({ text }) => <div>{ text }</div>;
 
 class Footer extends React.Component {
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          request: {
+            Your_Name: '',
+            Your_Email: '',
+            Phone_Number: '',
+            Message:''
+          }
+      };
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+      const { name, value } = e.target;
+      const { request } = this.state;
+      this.setState({
+        request: {
+                ...request,
+                [name]: value
+            }
+          });
+  }
+
+  handleSubmit(e) {
+      e.preventDefault();
+
+      const { request } = this.state;
+      const { dispatch } = this.props;
+      dispatch(sendRequestActions.send(request));
+  }
   render () {
     var center = { lat: 13.021985, lng: 80.1724798 };
     var zoom =  11;
+    const { request } = this.state;
+    const { request_sent } = this.props;
+    console.log(request_sent);
     return (
       <div>
         <div className="contact" id="contact">
         	<h3 className="w3_head w3_head1">Contact Me <span>Get in touch with me</span></h3>
         		<div className="col-md-5 contact-agileits-w3layouts">
-        		<form action="#" method="post">
-        				<input type="text" name="Your Name" placeholder="Name" required=""/>
-        				<input type="email" name="Your Email" placeholder="Email" required=""/>
-        				<input type="text" name="Phone Number" placeholder="Number" required=""/>
-        				<textarea name="Message" placeholder="Message" required=""></textarea>
+        		<form onSubmit={this.handleSubmit} method="POST">
+        				<input type="text" name="Your_Name" placeholder="Name" required="" value={request.Your_Name} onChange={this.handleChange}/>
+        				<input type="email" name="Your_Email" placeholder="Email" required="" value={request.Your_Email} onChange={this.handleChange}/>
+        				<input type="text" name="Phone_Number" placeholder="Number" required="" value={request.Phone_Number} onChange={this.handleChange}/>
+        				<textarea name="Message" placeholder="Message" required="" value={request.Message} onChange={this.handleChange}></textarea>
         				<input type="submit" value="Submit"/>
         			</form>
         		</div>
@@ -88,10 +127,19 @@ class Footer extends React.Component {
         </div>
         </div>
         <div className="copy-w3-agile">
-        	<p>Copyright 2017 My Info. All Rights Reserved | Design By <a href="http://w3layouts.com/">W3layouts</a></p>
+        	<p>Copyright 2018 My Info. All Rights Reserved | Design By <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
       </div>
     )
   }
 }
-export {Footer};
+
+function mapStateToProps(state) {
+  const { request_sent } = state.send_request;
+  return {
+      request_sent
+  };
+}
+
+const connectedFooter = connect(mapStateToProps)(Footer);
+export { connectedFooter as Footer };
