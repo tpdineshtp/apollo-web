@@ -10,7 +10,7 @@ function send(request) {
         body: JSON.stringify(request)
     };
 
-    return fetch('http://localhost:3000/contact_me', requestOptions).then(handleResponse);
+    return fetch('https://pacific-savannah-77461.herokuapp.com/contact_me', requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

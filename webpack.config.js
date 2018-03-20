@@ -44,6 +44,7 @@ module.exports = {
         inject: 'body'
     })],
     devServer: {
+        port: process.env.PORT || 3001,
         historyApiFallback: true
     }
 }
