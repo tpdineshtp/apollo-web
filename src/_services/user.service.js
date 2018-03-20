@@ -13,7 +13,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch('http://localhost:3000/users/register', requestOptions).then(handleResponse);
+    return fetch('https://pacific-savannah-77461.herokuapp.com/users/register', requestOptions).then(handleResponse);
 }
 
 function login(username, password) {
@@ -23,7 +23,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch('http://localhost:3000/users/auth', requestOptions)
+    return fetch('https://pacific-savannah-77461.herokuapp.com/users/auth', requestOptions)
         .then(response => {
             if (!response.ok) {
                 return Promise.reject(response.statusText);
